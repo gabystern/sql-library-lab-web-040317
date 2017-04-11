@@ -1,3 +1,5 @@
+require_relative 'environment'
+
 class SQLRunner
   def initialize(db)
     @db = db

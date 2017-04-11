@@ -1,33 +1,39 @@
 
-CREATE TABLE IF NOT EXISTS series (
+CREATE TABLE series (
   id INTEGER PRIMARY KEY,
   title TEXT,
   author_id INTEGER,
-  subgenre_id INTEGER,
+  subgenre_id INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS subgenres (
+CREATE TABLE subgenres (
   id INTEGER PRIMARY KEY,
   name TEXT
 );
 
-CREATE TABLE IF NOT EXISTS authors (
+CREATE TABLE authors (
   id INTEGER PRIMARY KEY,
   name TEXT
 );
 
-CREATE TABLE IF NOT EXISTS books (
+CREATE TABLE books (
   id INTEGER PRIMARY KEY,
   title TEXT,
   year INTEGER,
   series_id INTEGER
 );
 
-CREATE TABLE IF NOT EXISTS characters (
+CREATE TABLE characters (
   id INTEGER PRIMARY KEY,
   name TEXT,
   species TEXT,
   motto TEXT,
   series_id INTEGER,
   author_id INTEGER
+);
+
+CREATE TABLE character_books (
+  id INTEGER PRIMARY KEY,
+  character_id INTEGER,
+  book_id INTEGER
 );
